@@ -43,6 +43,7 @@ void DeyX::on_pushButton_6_clicked()
 {
     My_workout work(this);
     work.setModal(true);
+    this->close();
     work.exec();
 }
 
