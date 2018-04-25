@@ -53,6 +53,9 @@ private slots:
 private:
     Ui::My_workout *ui;
     DeyX *dx;
+
+public:
+void finish (int t);
 };
 
 #endif // MY_WORKOUT_H

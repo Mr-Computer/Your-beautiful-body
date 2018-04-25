@@ -1,6 +1,7 @@
 #include "my_workout.h"
 #include "ui_my_workout.h"
 #include "deyx.h"
+#include <QMessageBox>
 
 My_workout::My_workout(QWidget *parent) :
     QDialog(parent),
