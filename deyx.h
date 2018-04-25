@@ -27,7 +27,9 @@ private slots:
     void on_pushButton_5_clicked();
 
     void on_pushButton_6_clicked();
-
+public:
+    void predock (int x);
+    void finish (int t);
 private:
     Ui::DeyX *ui;
 };
