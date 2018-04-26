@@ -349,6 +349,7 @@ void DeyX::finish (int t)
         My_workout work(this);
         work.setModal(true);
         this->close();
+        work.green_button(_d);
         work.exec();
 }
 }

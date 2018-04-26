@@ -48,14 +48,13 @@ private slots:
     void on_pushButton_28_clicked();
     void on_pushButton_29_clicked();
     void on_pushButton_30_clicked();
-    void on_pushButton_31_clicked();
-
 private:
     Ui::My_workout *ui;
     DeyX *dx;
 
 public:
 void finish (int t);
+void green_button (int d);
 };
 
 #endif // MY_WORKOUT_H

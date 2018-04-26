@@ -256,7 +256,101 @@ void My_workout::on_pushButton_30_clicked()
     dey.exec();
 }
 
-void My_workout::on_pushButton_31_clicked()
+void My_workout::green_button (int d)
 {
+    switch (d) {
+    case 1:
+       {ui->pushButton->setStyleSheet("background-color: green");
+        break;}
+    case 2:
+       {ui->pushButton_2->setStyleSheet("background-color: green");
+        break;}
+    case 3:
+       {ui->pushButton_3->setStyleSheet("background-color: green");
+        break;}
+    case 4:
+       {ui->pushButton_4->setStyleSheet("background-color: green");
+        break;}
+    case 5:
+       {ui->pushButton_5->setStyleSheet("background-color: green");
+        break;}
+    case 6:
+       {ui->pushButton_6->setStyleSheet("background-color: green");
+        break;}
+    case 7:
+       {ui->pushButton_7->setStyleSheet("background-color: green");
+        break;}
+    case 8:
+       {ui->pushButton_8->setStyleSheet("background-color: green");
+        break;}
+    case 9:
+       {ui->pushButton_9->setStyleSheet("background-color: green");
+        break;}
+    case 10:
+       {ui->pushButton_10->setStyleSheet("background-color: green");
+        break;}
+    case 11:
+       {ui->pushButton_11->setStyleSheet("background-color: green");
+        break;}
+    case 12:
+       {ui->pushButton_12->setStyleSheet("background-color: green");
+        break;}
+    case 13:
+       {ui->pushButton_13->setStyleSheet("background-color: green");
+        break;}
+    case 14:
+       {ui->pushButton_14->setStyleSheet("background-color: green");
+        break;}
+    case 15:
+       {ui->pushButton_15->setStyleSheet("background-color: green");
+        break;}
+    case 16:
+       {ui->pushButton_16->setStyleSheet("background-color: green");
+        break;}
+    case 17:
+       {ui->pushButton_17->setStyleSheet("background-color: green");
+        break;}
+    case 18:
+       {ui->pushButton_18->setStyleSheet("background-color: green");
+        break;}
+    case 19:
+       {ui->pushButton_19->setStyleSheet("background-color: green");
+        break;}
+    case 20:
+       {ui->pushButton_20->setStyleSheet("background-color: green");
+        break;}
+    case 21:
+       {ui->pushButton_21->setStyleSheet("background-color: green");
+        break;}
+    case 22:
+       {ui->pushButton_22->setStyleSheet("background-color: green");
+        break;}
+    case 23:
+       {ui->pushButton_23->setStyleSheet("background-color: green");
+        break;}
+    case 24:
+       {ui->pushButton_24->setStyleSheet("background-color: green");
+        break;}
+    case 25:
+       {ui->pushButton_25->setStyleSheet("background-color: green");
+        break;}
+    case 26:
+       {ui->pushButton_26->setStyleSheet("background-color: green");
+        break;}
+    case 27:
+       {ui->pushButton_27->setStyleSheet("background-color: green");
+        break;}
+    case 28:
+       {ui->pushButton_28->setStyleSheet("background-color: green");
+        break;}
+    case 29:
+       {ui->pushButton_29->setStyleSheet("background-color: green");
+        break;}
+    case 30:
+       {ui->pushButton_30->setStyleSheet("background-color: green");
+        break;}
 
+    default:
+        break;
+    }
 }
