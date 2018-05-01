@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Your-beautiful-body
 TEMPLATE = app
@@ -30,7 +30,9 @@ SOURCES += \
     my_workout.cpp \
     deyx.cpp \
     my_achievements.cpp \
-    my_help.cpp
+    my_help.cpp \
+    download.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
         menuwindow.h \
@@ -38,7 +40,9 @@ HEADERS += \
     my_workout.h \
     deyx.h \
     my_achievements.h \
-    my_help.h
+    my_help.h \
+    download.h \
+    qcustomplot.h
 
 FORMS += \
         menuwindow.ui \
@@ -46,4 +50,8 @@ FORMS += \
     my_workout.ui \
     deyx.ui \
     my_achievements.ui \
-    my_help.ui
+    my_help.ui \
+    download.ui
+
+RESOURCES += \
+    ressurse.qrc

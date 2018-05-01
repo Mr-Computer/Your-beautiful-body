@@ -15,6 +15,11 @@ public:
     explicit My_achievements(QWidget *parent = 0);
     ~My_achievements();
 
+private slots:
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::My_achievements *ui;
 };

@@ -30,6 +30,7 @@ private slots:
 public:
     void predock (int x);
     void finish (int t);
+    void eset (int x);
 private:
     Ui::DeyX *ui;
 };

@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::My_data *ui;
+public:
+    void dat ();
 };
 
 #endif // MY_DATA_H

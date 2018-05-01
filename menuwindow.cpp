@@ -22,6 +22,7 @@ void MenuWindow::on_pushButton_clicked()
     My_data data(this);
     data.setModal(true);
     data.exec();
+
 }
 
 void MenuWindow::on_pushButton_2_clicked()
@@ -29,6 +30,7 @@ void MenuWindow::on_pushButton_2_clicked()
     My_workout work(this);
     work.setModal(true);
     work.exec();
+
 }
 
 void MenuWindow::on_pushButton_4_clicked()

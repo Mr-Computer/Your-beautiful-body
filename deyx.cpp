@@ -2,6 +2,9 @@
 #include "ui_deyx.h"
 #include "my_workout.h"
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
+#include "string.h"
 static int _x=1,_d=0;
 DeyX::DeyX(QWidget *parent) :
     QDialog(parent),
@@ -101,7 +104,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("20 разів Качання пресу");
          ui->pushButton_4->setText("40 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("5 разів Віджимання від підлоги");
-         _d=1;
+         _d=1; eset(_d);
         break;}
     case 2:
        { ui->pushButton->setText("55 Присідань");
@@ -109,7 +112,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("25 разів Качання пресу");
          ui->pushButton_4->setText("45 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("5 разів Віджимання від підлоги");
-         _d=2;
+         _d=2; eset(_d);
         break;}
     case 3:
        { ui->pushButton->setText("60 Присідань");
@@ -117,7 +120,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("25 разів Качання пресу");
          ui->pushButton_4->setText("45 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("100 разів Стрибки зі скакалкою");
-         _d=3;
+         _d=3; eset(_d);
         break;}
     case 4:
        { ui->pushButton->setText("30 сек «Планка»");
@@ -125,7 +128,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("160 разів Стрибки зі скакалкою");
          ui->pushButton_4->setText("25 разів Підйом сідниць лежачи");
          ui->pushButton_5->setText("30 разів  Нахили тулуба (вліво ,вправо , вперед)");
-         _d=4;
+         _d=4; eset(_d);
         break;}
     case 5:
        { ui->pushButton->setText("70 Присідань");
@@ -133,7 +136,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("25 разів Качання пресу");
          ui->pushButton_4->setText("45 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("10 разів Віджимання від підлоги");
-         _d=5;
+         _d=5; eset(_d);
         break;}
     case 6:
        { ui->pushButton->setText("75 Присідань");
@@ -141,7 +144,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("50 разів Махи ногами (на одну ногу)");
          ui->pushButton_4->setText("200 разів Стрибки зі скакалкою");
          ui->pushButton_5->setText("10 разів Віджимання від підлоги");
-         _d=6;
+         _d=6; eset(_d);
         break;}
     case 7:
        { ui->pushButton->setText("80 Присідань");
@@ -149,7 +152,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("35 разів Качання пресу");
          ui->pushButton_4->setText("55 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("10 разів Віджимання від підлоги");
-         _d=7;
+         _d=7; eset(_d);
         break;}
     case 8:
        { ui->pushButton->setText("45 сек «Планка»");
@@ -157,7 +160,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("40 разів Підйом сідниць лежачи");
          ui->pushButton_4->setText("40 разів  Нахили тулуба (вліво ,вправо , вперед)");
          ui->pushButton_5->setText("10 разів Скручування тулуба (вліво ,вправо)");
-         _d=8;
+         _d=8; eset(_d);
         break;}
     case 9:
        { ui->pushButton->setText("100 Присідань");
@@ -165,7 +168,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("35 разів Качання пресу");
          ui->pushButton_4->setText("55 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("12 разів Віджимання від підлоги");
-         _d=9;
+         _d=9; eset(_d);
         break;}
     case 10:
        { ui->pushButton->setText("105 Присідань");
@@ -173,7 +176,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("40 разів Качання пресу");
          ui->pushButton_4->setText("60 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("12 разів Віджимання від підлоги");
-         _d=10;
+         _d=10; eset(_d);
         break;}
     case 11:
        { ui->pushButton->setText("110 Присідань");
@@ -181,7 +184,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("35 разів Качання пресу");
          ui->pushButton_4->setText("65 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("300 разів Стрибки зі скакалкою");
-         _d=11;
+         _d=11; eset(_d);
         break;}
     case 12:
        { ui->pushButton->setText("90 сек «Планка»");
@@ -189,7 +192,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("360 разів Стрибки зі скакалкою");
          ui->pushButton_4->setText("40 разів Підйом сідниць лежачи");
          ui->pushButton_5->setText("50 разів  Нахили тулуба (вліво ,вправо , вперед)");
-         _d=12;
+         _d=12; eset(_d);
         break;}
     case 13:
        { ui->pushButton->setText("130 Присідань");
@@ -197,7 +200,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("60 разів Махи ногами (на одну ногу)");
          ui->pushButton_4->setText("15 разів Віджимання від підлоги");
          ui->pushButton_5->setText("400 разів Стрибки зі скакалкою");
-         _d=13;
+         _d=13; eset(_d);
         break;}
     case 14:
        { ui->pushButton->setText("135 Присідань");
@@ -205,7 +208,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("35 разів Качання пресу");
          ui->pushButton_4->setText("65 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("460 разів Стрибки зі скакалкою");
-         _d=14;
+         _d=14; eset(_d);
         break;}
     case 15:
        { ui->pushButton->setText("140 Присідань");
@@ -213,7 +216,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("40 разів Качання пресу");
          ui->pushButton_4->setText("60 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("20 разів Віджимання від підлоги");
-         _d=15;
+         _d=15; eset(_d);
         break;}
     case 16:
        { ui->pushButton->setText("120 сек «Планка»");
@@ -221,7 +224,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("500 разів Стрибки зі скакалкою");
          ui->pushButton_4->setText("45 разів Підйом сідниць лежачи");
          ui->pushButton_5->setText("55 разів  Нахили тулуба (вліво ,вправо , вперед)");
-         _d=16;
+         _d=16; eset(_d);
         break;}
     case 17:
        { ui->pushButton->setText("150 Присідань");
@@ -229,7 +232,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("45 разів Качання пресу");
          ui->pushButton_4->setText("65 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("560 разів Стрибки зі скакалкою");
-         _d=17;
+         _d=17; eset(_d);
         break;}
     case 18:
        { ui->pushButton->setText("155 Присідань");
@@ -237,7 +240,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("50 разів Качання пресу");
          ui->pushButton_4->setText("70 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("25 разів Віджимання від підлоги");
-         _d=18;
+         _d=18; eset(_d);
         break;}
     case 19:
        { ui->pushButton->setText("160 Присідань");
@@ -245,7 +248,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("75 разів Махи ногами (на одну ногу)");
          ui->pushButton_4->setText("30 разів Віджимання від підлоги");
          ui->pushButton_5->setText("600 разів Стрибки зі скакалкою");
-         _d=19;
+         _d=19; eset(_d);
         break;}
     case 20:
        { ui->pushButton->setText("150 сек «Планка»");
@@ -253,7 +256,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("50 разів Підйом сідниць лежачи");
          ui->pushButton_4->setText("60 разів  Нахили тулуба (вліво ,вправо , вперед)");
          ui->pushButton_5->setText("20 разів Скручування тулуба (вліво ,вправо)");
-         _d=20;
+         _d=20; eset(_d);
         break;}
     case 21:
        { ui->pushButton->setText("180 Присідань");
@@ -261,7 +264,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("50 разів Качання пресу");
          ui->pushButton_4->setText("70 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("32 разів Віджимання від підлоги");
-         _d=21;
+         _d=21; eset(_d);
         break;}
     case 22:
        { ui->pushButton->setText("185 Присідань");
@@ -269,7 +272,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("55 разів Качання пресу");
          ui->pushButton_4->setText("75 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("35 разів Віджимання від підлоги");
-         _d=22;
+         _d=22; eset(_d);
         break;}
     case 23:
        { ui->pushButton->setText("190 Присідань");
@@ -277,7 +280,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("55 разів Качання пресу");
          ui->pushButton_4->setText("75 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("35 разів Віджимання від підлоги");
-         _d=23;
+         _d=23; eset(_d);
         break;}
     case 24:
        { ui->pushButton->setText("210 сек «Планка»");
@@ -285,7 +288,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("55 разів Підйом сідниць лежачи");
          ui->pushButton_4->setText("50 разів  Нахили тулуба (вліво ,вправо , вперед)");
          ui->pushButton_5->setText("30 разів Скручування тулуба (вліво ,вправо)");
-         _d=24;
+         _d=24; eset(_d);
         break;}
     case 25:
        { ui->pushButton->setText("220 Присідань");
@@ -293,7 +296,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("50 разів Качання пресу");
          ui->pushButton_4->setText("70 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("38 разів Віджимання від підлоги");
-         _d=25;
+         _d=25; eset(_d);
         break;}
     case 26:
        { ui->pushButton->setText("225 Присідань");
@@ -301,7 +304,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("65 разів Махи ногами (на одну ногу)");
          ui->pushButton_4->setText("40 разів Віджимання від підлоги");
          ui->pushButton_5->setText("760 разів Стрибки зі скакалкою");
-         _d=26;
+         _d=26; eset(_d);
         break;}
     case 27:
        { ui->pushButton->setText("230 Присідань");
@@ -309,7 +312,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("60 разів Качання пресу");
          ui->pushButton_4->setText("60 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("800 разів Стрибки зі скакалкою");
-         _d=27;
+         _d=27; eset(_d);
         break;}
     case 28:
        { ui->pushButton->setText("240 сек «Планка»");
@@ -317,7 +320,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("860 разів Стрибки зі скакалкою");
          ui->pushButton_4->setText("60 разів Підйом сідниць лежачи");
          ui->pushButton_5->setText("60 разів  Нахили тулуба (вліво ,вправо , вперед)");
-         _d=28;
+         _d=28; eset(_d);
         break;}
     case 29:
        { ui->pushButton->setText("240 Присідань");
@@ -325,7 +328,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("55 разів Качання пресу");
          ui->pushButton_4->setText("65 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("45 разів Віджимання від підлоги");
-         _d=29;
+         _d=29; eset(_d);
         break;}
     case 30:
        { ui->pushButton->setText("250 Присідань");
@@ -333,7 +336,7 @@ void DeyX::predock (int x)
          ui->pushButton_3->setText("60 разів Качання пресу");
          ui->pushButton_4->setText("70 разів Махи ногами (на одну ногу)");
          ui->pushButton_5->setText("50 разів Віджимання від підлоги");
-         _d=30;
+         _d=30; eset(_d);
         break;}
 
     default:
@@ -344,13 +347,26 @@ void DeyX::predock (int x)
 void DeyX::finish (int t)
 {
     if (t == 5)
-      {  QMessageBox::about(this,"Фіналочка",
+      { _x=1;
+        QMessageBox::about(this,"Фіналочка",
                            "Вітаємо з завершенням сьогоднішнього тренування.");
         My_workout work(this);
         work.setModal(true);
-        this->close();
-        work.green_button(_d);
+        this->hide();
+        work.buttom_paint();
         work.exec();
 }
+}
+
+void DeyX::eset (int x)
+{
+QFile file("workout.dat");
+file.open(QIODevice::Append | QIODevice::Truncate);
+QString line;
+line = file.read(30);
+QTextStream stream (&file);
+line[x]='1';
+stream <<line;
+file.close();
 }
 
