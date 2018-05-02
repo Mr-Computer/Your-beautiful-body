@@ -265,7 +265,7 @@ void My_workout::buttom_paint ()
     for (int j=0; j<30; j++)
     {
         file.getChar(&i);
-        if (i == ' ')
+        if (i == '1')
             switch (j+1) {
             case 1:
                {ui->pushButton->setStyleSheet("background-color: green");

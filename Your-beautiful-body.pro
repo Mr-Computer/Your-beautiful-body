@@ -32,7 +32,8 @@ SOURCES += \
     my_achievements.cpp \
     my_help.cpp \
     download.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    login.cpp
 
 HEADERS += \
         menuwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     my_achievements.h \
     my_help.h \
     download.h \
-    qcustomplot.h
+    qcustomplot.h \
+    login.h
 
 FORMS += \
         menuwindow.ui \
@@ -51,7 +53,8 @@ FORMS += \
     deyx.ui \
     my_achievements.ui \
     my_help.ui \
-    download.ui
+    download.ui \
+    login.ui
 
 RESOURCES += \
     ressurse.qrc

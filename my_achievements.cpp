@@ -1,6 +1,6 @@
 #include "my_achievements.h"
 #include "ui_my_achievements.h"
-
+#include <QFile>
 My_achievements::My_achievements(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::My_achievements)
@@ -19,9 +19,8 @@ void My_achievements::on_pushButton_clicked()
 }
 
 void My_achievements::on_pushButton_2_clicked()
-{
-    //Рисуем график y=x*x
-
+{       QFile file("graf.dat");
+        file.open(QIODevice::ReadOnly);
         //Сгенерируем данные
         //Для этого создадим два массива точек:
         //один для созранения x координат точек,
@@ -50,8 +49,8 @@ void My_achievements::on_pushButton_2_clicked()
         ui->widget->graph(0)->setData(x, y);
 
         //Подписываем оси Ox и Oy
-        ui->widget->xAxis->setLabel("x");
-        ui->widget->yAxis->setLabel("y");
+        ui->widget->xAxis->setLabel("Дні");
+        ui->widget->yAxis->setLabel("Вага");
 
         //Установим область, которая будет показываться на графике
         ui->widget->xAxis->setRange(a, b);//Для оси Ox
@@ -68,5 +67,6 @@ void My_achievements::on_pushButton_2_clicked()
 
         //И перерисуем график на нашем widget
         ui->widget->replot();
+        file.close();
 }
 

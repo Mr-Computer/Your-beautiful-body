@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "string.h"
+#include <QDebug>
 static int _x=1,_d=0;
 DeyX::DeyX(QWidget *parent) :
     QDialog(parent),
@@ -361,12 +362,16 @@ void DeyX::finish (int t)
 void DeyX::eset (int x)
 {
 QFile file("workout.dat");
-file.open(QIODevice::Append | QIODevice::Truncate);
+file.open(QIODevice::ReadWrite);
 QString line;
-line = file.read(30);
-QTextStream stream (&file);
-line[x]='1';
-stream <<line;
+line = file.readAll();
+line[x-1]='1';
+file.close();
+file.open(QIODevice::Truncate);
+file.close();
+file.open(QIODevice::ReadWrite);
+QTextStream stream(&file);
+stream<<line;
 file.close();
 }
 
