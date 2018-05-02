@@ -3,6 +3,7 @@
 #include "menuwindow.h"
 #include "deyx.h"
 #include <QFile>
+#include <QString>
 
 My_workout::My_workout(QWidget *parent) :
     QDialog(parent),
@@ -261,11 +262,10 @@ void My_workout::on_pushButton_30_clicked()
 void My_workout::buttom_paint ()
 { QFile file("workout.dat");
     file.open(QIODevice::ReadWrite);
-    char i;
+    QString line = file.read(30);
     for (int j=0; j<30; j++)
     {
-        file.getChar(&i);
-        if (i == '1')
+        if (line[j] == '1')
             switch (j+1) {
             case 1:
                {ui->pushButton->setStyleSheet("background-color: green");

@@ -7,17 +7,8 @@
 Login::Login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Login)
-{   QFile file("data.dat");
-    file.open(QIODevice::ReadWrite);
-    QString line = file.readLine();
-    if (line == NULL)
-    {
+{
     ui->setupUi(this);
-    }else
-    {
-    ui->setupUi(this);
-    this->close();
-    }
 }
 
 Login::~Login()

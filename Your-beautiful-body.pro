@@ -33,7 +33,8 @@ SOURCES += \
     my_help.cpp \
     download.cpp \
     qcustomplot.cpp \
-    login.cpp
+    login.cpp \
+    my_mas.cpp
 
 HEADERS += \
         menuwindow.h \
@@ -44,7 +45,8 @@ HEADERS += \
     my_help.h \
     download.h \
     qcustomplot.h \
-    login.h
+    login.h \
+    my_mas.h
 
 FORMS += \
         menuwindow.ui \
@@ -54,7 +56,8 @@ FORMS += \
     my_achievements.ui \
     my_help.ui \
     download.ui \
-    login.ui
+    login.ui \
+    my_mas.ui
 
 RESOURCES += \
     ressurse.qrc

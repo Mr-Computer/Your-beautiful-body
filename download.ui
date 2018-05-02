@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Your-Beautiful-Body</string>
+   <string>Your Beautiful Body</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

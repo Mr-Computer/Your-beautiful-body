@@ -28,6 +28,7 @@ private slots:
 
 private:
     Ui::MenuWindow *ui;
+    MenuWindow *iu;
 };
 
 #endif // MENUWINDOW_H

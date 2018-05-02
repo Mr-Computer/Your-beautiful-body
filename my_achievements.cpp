@@ -1,6 +1,7 @@
 #include "my_achievements.h"
 #include "ui_my_achievements.h"
 #include <QFile>
+#include <QString>
 My_achievements::My_achievements(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::My_achievements)
@@ -19,7 +20,7 @@ void My_achievements::on_pushButton_clicked()
 }
 
 void My_achievements::on_pushButton_2_clicked()
-{       QFile file("graf.dat");
+{       QFile file("achi.dat");
         file.open(QIODevice::ReadOnly);
         //Сгенерируем данные
         //Для этого создадим два массива точек:
@@ -34,13 +35,19 @@ void My_achievements::on_pushButton_2_clicked()
         QVector<double> x(N), y(N); //Массивы координат точек
 
         //Вычисляем наши данные
-        x[0]=0; y[0]=12;
-        x[1]=5; y[1]=24;
-        x[2]=10; y[2]=26;
-        x[3]=15; y[3]=32;
-        x[4]=20; y[4]=12;
-        x[5]=25; y[5]=16;
-        x[6]=30; y[6]=10;
+        x[0]=0;
+        x[1]=5;
+        x[2]=10;
+        x[3]=15;
+        x[4]=20;
+        x[5]=25;
+        x[6]=30;
+        QString line;
+            for (int i=0; i<7; i++)
+            {
+               line = file.readLine();
+               y[i] = line.toDouble();
+            }
 
         ui->widget->clearGraphs();//Если нужно, но очищаем все графики
         //Добавляем один график в widget

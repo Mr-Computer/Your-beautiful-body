@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include "string.h"
 #include <QDebug>
+#include "my_mas.h"
 static int _x=1,_d=0;
 DeyX::DeyX(QWidget *parent) :
     QDialog(parent),
@@ -354,8 +355,15 @@ void DeyX::finish (int t)
         My_workout work(this);
         work.setModal(true);
         this->hide();
+        if (_d%5 == 0)
+        {
+            My_mas mas(this);
+            mas.setModal(true);
+            mas.exec();
+        }
         work.buttom_paint();
         work.exec();
+
 }
 }
 
